@@ -156,7 +156,7 @@ def run_benchmarks(
 
     for size in sizes:
         size_mb = size / 1024**2
-        print(f"\nTesting with size: {size_mb:.2f} MB\n")
+        print(f"\nTesting with size: {size_mb:.3f} MB\n")
 
         for run in range(num_runs):
             print(f"Run {run + 1} of {num_runs}")
@@ -171,14 +171,14 @@ def run_benchmarks(
                 size,
                 4,
             )
-            print(f"Sequential Write Bandwidth: {write_bw} MB/s")
+            print(f"Sequential Write Bandwidth: {write_bw:.3f} MB/s")
             all_results.append(("Sequential Write", size_mb, run + 1, write_bw))
 
             # Sequential read
             read_bw = run_fio_test(
                 "sequential_read", test_dir / "seq_read_test", "1M", 64, "read", size, 4
             )
-            print(f"Sequential Read Bandwidth: {read_bw} MB/s")
+            print(f"Sequential Read Bandwidth: {read_bw:.3f} MB/s")
             all_results.append(("Sequential Read", size_mb, run + 1, read_bw))
 
             # Random write
@@ -191,7 +191,7 @@ def run_benchmarks(
                 size,
                 4,
             )
-            print(f"Random Write Bandwidth: {rand_write_bw} MB/s")
+            print(f"Random Write Bandwidth: {rand_write_bw:.3f} MB/s")
             all_results.append(("Random Write", size_mb, run + 1, rand_write_bw))
 
             # Random read
@@ -204,17 +204,17 @@ def run_benchmarks(
                 size,
                 4,
             )
-            print(f"Random Read Bandwidth: {rand_read_bw} MB/s")
+            print(f"Random Read Bandwidth: {rand_read_bw:.3f} MB/s")
             all_results.append(("Random Read", size_mb, run + 1, rand_read_bw))
 
             # Custom CSV write test
             csv_write_bw = write_csv_test(test_dir / f"custom_write_{size}.csv", size)
-            print(f"CSV Write Bandwidth: {csv_write_bw:.2f} MB/s")
+            print(f"CSV Write Bandwidth: {csv_write_bw:.3f} MB/s")
             all_results.append(("CSV Write", size_mb, run + 1, csv_write_bw))
 
             # Custom CSV read test
             csv_read_bw = read_csv_test(test_dir / f"custom_write_{size}.csv")
-            print(f"CSV Read Bandwidth: {csv_read_bw:.2f} MB/s")
+            print(f"CSV Read Bandwidth: {csv_read_bw:.3f} MB/s")
             all_results.append(("CSV Read", size_mb, run + 1, csv_read_bw))
 
     # Save all results to CSV file
