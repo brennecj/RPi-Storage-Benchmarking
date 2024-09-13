@@ -1,0 +1,53 @@
+# Python bytecode and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+venv/
+env/
+.virtualenv/
+
+# Ignore benchmark result directories
+hw_benchmark_results_*/
+
+# Output files
+*.csv
+*.log
+*.txt
+!*requirements.txt
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.swp
+*.swo
+
+# Ignore Python package management files
+*.egg-info/
+.eggs/
+*.egg
+
+# Byte-compiled C extensions
+*.so
+*.pyd
+*.dll
+
+# Python test coverage
+.coverage
+htmlcov/
+.cache/
+
+# pipenv related files
+Pipfile
+Pipfile.lock
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore other user or editor-specific files
+.vscode/
+.idea/
