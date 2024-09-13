@@ -208,14 +208,14 @@ def run_benchmarks(
             all_results.append(("Random Read", size_mb, run + 1, rand_read_bw))
 
             # Custom CSV write test
-            write_time = write_csv_test(test_dir / f"custom_write_{size}.csv", size)
-            print(f"Custom CSV Write Time: {write_time:.2f} seconds")
-            all_results.append(("Custom CSV Write", size_mb, run + 1, write_time))
+            csv_write_bw = write_csv_test(test_dir / f"custom_write_{size}.csv", size)
+            print(f"CSV Write Bandwidth: {csv_write_bw:.2f} MB/s")
+            all_results.append(("CSV Write", size_mb, run + 1, csv_write_bw))
 
             # Custom CSV read test
-            read_time = read_csv_test(test_dir / f"custom_write_{size}.csv")
-            print(f"Custom CSV Read Time: {read_time:.2f} seconds")
-            all_results.append(("Custom CSV Read", size_mb, run + 1, read_time))
+            csv_read_bw = read_csv_test(test_dir / f"custom_write_{size}.csv")
+            print(f"CSV Read Bandwidth: {csv_read_bw:.2f} MB/s")
+            all_results.append(("CSV Read", size_mb, run + 1, csv_read_bw))
 
     # Save all results to CSV file
     save_results_to_csv(all_results, results_file)
