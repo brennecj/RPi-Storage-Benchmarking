@@ -53,11 +53,11 @@ The results will be saved to `benchmark_results.csv` in a folder named `hw_bench
 ## Example Output
 
 Example results in `benchmark_results.csv`:
-| Test Type         | Data Size (MB) | Run | Result       |
+| Test Type         | Data Size (MB) | Run | Result (MB/s)|
 |-------------------|----------------|-----|--------------|
-| Sequential Write  | 10.00          | 1   | 50.12 MB/s   |
-| Sequential Read   | 10.00          | 1   | 52.34 MB/s   |
-| Random Write      | 10.00          | 1   | 1.42 MB/s    |
-| Random Read       | 10.00          | 1   | 1.37 MB/s    |
-| Custom CSV Write  | 10.00          | 1   | 0.87 seconds |
-| Custom CSV Read   | 10.00          | 1   | 0.45 seconds |
+| Sequential Write  | 10.00          | 1   | 50.12        |
+| Sequential Read   | 10.00          | 1   | 52.34        |
+| Random Write      | 10.00          | 1   | 1.42         |
+| Random Read       | 10.00          | 1   | 1.37         |
+| Custom CSV Write  | 10.00          | 1   | 21.87        |
+| Custom CSV Read   | 10.00          | 1   | 14.45        |
